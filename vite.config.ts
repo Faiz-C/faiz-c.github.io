@@ -1,16 +1,9 @@
-import {defineConfig} from 'vite'
-import checker from 'vite-plugin-checker';
-import react from '@vitejs/plugin-react'
+import { sveltekit } from '@sveltejs/kit/vite';
+import { defineConfig } from 'vite';
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
-  server: {
-    port: 8100,
-  },
-  build: {
-    outDir: 'build'
-  },
-  plugins: [react(), checker({ typescript: true })]
-})
-
+	plugins: [sveltekit()],
+	server: {
+		port: 8100
+	}
+});
